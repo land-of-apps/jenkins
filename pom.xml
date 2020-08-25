@@ -266,7 +266,9 @@ THE SOFTWARE.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <configuration>
-            <argLine>-noverify</argLine> <!-- some versions of JDK7/8 causes VerifyError during mock tests: http://code.google.com/p/powermock/issues/detail?id=504 -->
+            <argLine>-noverify -javaagent:${maven.multiModuleProjectDirectory}/appmap.jar -Dappmap.debug
+                -Dappmap.config.file=${maven.multiModuleProjectDirectory}/appmap.yml
+                -Dappmap.output.directory=${maven.multiModuleProjectDirectory}/tmp/appmap</argLine> <!-- some versions of JDK7/8 causes VerifyError during mock tests: http://code.google.com/p/powermock/issues/detail?id=504 -->
             <systemPropertyVariables>
               <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
               <forkedProcessTimeoutInSeconds>3600</forkedProcessTimeoutInSeconds>
