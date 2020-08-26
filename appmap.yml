@@ -27,13 +27,13 @@ packages:
       - hudson.ExpressionFactory2
       - hudson.ExtensionComponent
       - hudson.remoting.ClassFilter
+      - hudson.FilePathTest
 
   - path: jenkins
     exclude:
       # An error occurred transforming class org/jenkinsci/main/modules/sshd/PortAdvertiser/httpHeaders
       # class java.lang.RuntimeException: org.jenkinsci.main.modules.sshd.PortAdvertiser.httpHeaders: frozen class (cannot edit)
       - org.jenkinsci.main.modules.sshd.PortAdvertiser.httpHeaders
-      - jenkins.util
       - jenkins.model.Jenkins$3#getInstance
       - jenkins.model.Jenkins#isUsageStatisticsCollected
       - jenkins.model.Jenkins#getExtensionList
@@ -48,9 +48,9 @@ packages:
       - jenkins.security.stapler.StaticRoutingDecisionProvider
       - jenkins.security.stapler.DoActionFilter
       - jenkins.security.stapler.TypedFilter
-      - jenkins.model.IdStrategy
       - jenkins.security.CustomClassFilter
       - jenkins.security.ClassFilterImpl
+      - jenkins.model.lazy.AbstractLazyLoadRunMapTest
 
   - path: org.acegisecurity.context
     exclude:
