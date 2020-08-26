@@ -5,5 +5,8 @@ jdk:
 - openjdk8
 import: land-of-apps/land-of-apps:travis/java-imports.yml
 
+install:
+- mvn -am -pl war,bom -DskipTests -Dspotbugs.skip clean install
+
 script:
 - mvn test -Plight-test -Dmaven.test.failure.ignore=true
