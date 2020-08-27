@@ -9,4 +9,4 @@ install:
 - mvn -am -pl war,bom -DskipTests -Dspotbugs.skip clean install
 
 script:
-- mvn test -Psmoke-test -Dmaven.test.failure.ignore=true
+- mvn test -Plight-test -Dmaven.test.failure.ignore=true
