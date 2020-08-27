@@ -1,0 +1,59 @@
+name: Jenkins
+packages:
+  - path: hudson.util.Secret
+
+  - path: hudson
+    exclude:
+      # An error occurred transforming class com/cloudbees/hudson/plugins/folder/properties/FolderCredentialsProvider
+      # class java.lang.RuntimeException: com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider: frozen class (cannot edit)
+      - com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider
+      - hudson.util
+      - hudson.Util
+      - hudson.model.User#getId
+      - hudson.model.AdministrativeMonitor#isEnabled
+      - hudson.PluginManager#whichPlugin
+      - hudson.PluginWrapper#getShortName
+      - hudson.EnvVars#put
+      - hudson.EnvVars#addLine
+      - hudson.model.Descriptor#getId
+      - hudson.model.AbstractCIBase#getDisabledAdministrativeMonitors
+      - hudson.security.ChainedServletFilter$1#doFilter
+      - hudson.model.Descriptor#getId
+      - hudson.security.HudsonPrivateSecurityRealm$Details#getUsername
+      - hudson.security.Permission#getId
+      - hudson.security.Permission#equals
+      - hudson.security.Permission#hashCode
+      - hudson.ExtensionList
+      - hudson.ExpressionFactory2
+      - hudson.ExtensionComponent
+      - hudson.remoting.ClassFilter
+      - hudson.FilePathTest
+
+  - path: jenkins
+    exclude:
+      # An error occurred transforming class org/jenkinsci/main/modules/sshd/PortAdvertiser/httpHeaders
+      # class java.lang.RuntimeException: org.jenkinsci.main.modules.sshd.PortAdvertiser.httpHeaders: frozen class (cannot edit)
+      - org.jenkinsci.main.modules.sshd.PortAdvertiser.httpHeaders
+      - jenkins.model.Jenkins$3#getInstance
+      - jenkins.model.Jenkins#isUsageStatisticsCollected
+      - jenkins.model.Jenkins#getExtensionList
+      - jenkins.model.Jenkins.get
+      - jenkins.model.Jenkins.getInstanceOrNull
+      - jenkins.ClassLoaderReflectionToolkit._findResource
+      - jenkins.plugins.DetachedPluginsUtil$DetachedPlugin#getMinimumJavaVersion
+      - jenkins.telemetry.Telemetry.isDisabled
+      - jenkins.MetaLocaleDrivenResourceProvider#lookup
+      - jenkins.security.NonSerializableSecurityContext#hashCode
+      - jenkins.security.NonSerializableSecurityContext#getAuthentication
+      - jenkins.security.stapler.StaticRoutingDecisionProvider
+      - jenkins.security.stapler.DoActionFilter
+      - jenkins.security.stapler.TypedFilter
+      - jenkins.model.IdStrategy
+      - jenkins.security.CustomClassFilter
+      - jenkins.security.ClassFilterImpl
+      - jenkins.model.lazy.AbstractLazyLoadRunMapTest
+
+  - path: org.acegisecurity.context
+    exclude:
+      - org.acegisecurity.context.SecurityContextHolder.getContext
+      - org.acegisecurity.context.ThreadLocalSecurityContextHolderStrategy#getContext
