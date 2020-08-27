@@ -48,6 +48,7 @@ packages:
       - jenkins.security.stapler.StaticRoutingDecisionProvider
       - jenkins.security.stapler.DoActionFilter
       - jenkins.security.stapler.TypedFilter
+      - jenkins.model.IdStrategy
       - jenkins.security.CustomClassFilter
       - jenkins.security.ClassFilterImpl
       - jenkins.model.lazy.AbstractLazyLoadRunMapTest
